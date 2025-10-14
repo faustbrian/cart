@@ -1,0 +1,46 @@
+<?php declare(strict_types=1);
+
+/**
+ * Copyright (C) BaseCode Oy - All Rights Reserved
+ *
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
+ */
+
+namespace BaseCodeOy\Basket\Jurisdictions\NorthAmerica;
+
+use BaseCodeOy\Basket\Contracts\Jurisdiction;
+use BaseCodeOy\Basket\Contracts\TaxRate;
+use BaseCodeOy\Basket\TaxRates\NorthAmerica\NorthCarolinaValueAddedTax;
+use Money\Currency;
+
+final readonly class NorthCarolina implements Jurisdiction
+{
+    private Currency $currency;
+
+    private NorthCarolinaValueAddedTax $northCarolinaValueAddedTax;
+
+    /**
+     * NorthCarolina constructor.
+     */
+    public function __construct()
+    {
+        $this->northCarolinaValueAddedTax = new NorthCarolinaValueAddedTax();
+        $this->currency = new Currency('USD');
+    }
+
+    /**
+     * @return NorthCarolinaValueAddedTax
+     */
+    #[\Override()]
+    public function rate(): TaxRate
+    {
+        return $this->northCarolinaValueAddedTax;
+    }
+
+    #[\Override()]
+    public function currency(): Currency
+    {
+        return $this->currency;
+    }
+}
