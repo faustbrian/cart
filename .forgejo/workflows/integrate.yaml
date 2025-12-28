@@ -26,10 +26,10 @@ jobs:
 
         steps:
             - name: "Checkout"
-              uses: "actions/checkout@v4.2.2"
+              uses: "https://github.com/https://github.com/actions/checkout@v4.2.2"
 
             - name: "Set up PHP"
-              uses: "shivammathur/setup-php@2.31.1"
+              uses: "https://github.com/https://github.com/shivammathur/setup-php@2.31.1"
               with:
                   coverage: "pcov"
                   extensions: "bcmath, ctype, curl, dom, exif, fileinfo, gd, iconv, imagick, intl, json, libxml, mbstring, none, opcache, pcntl, pdo, pdo_sqlite, phar, posix, simplexml, soap, sqlite, tokenizer, xml, xmlwriter, zip"
@@ -45,17 +45,17 @@ jobs:
               run: "composer validate --ansi --strict"
 
             - name: "Determine composer cache directory"
-              uses: "basecodeoy/.github/actions/composer/determine-cache-directory@1.0.0"
+              uses: "https://github.com/https://github.com/basecodeoy/.github/actions/composer/determine-cache-directory@1.0.0"
 
             - name: "Cache dependencies installed with composer"
-              uses: "actions/cache@v4.1.2"
+              uses: "https://github.com/https://github.com/actions/cache@v4.1.2"
               with:
                   path: "${{ env.COMPOSER_CACHE_DIR }}"
                   key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
                   restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
             - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-              uses: "basecodeoy/.github/actions/composer/install@1.0.0"
+              uses: "https://github.com/https://github.com/basecodeoy/.github/actions/composer/install@1.0.0"
               with:
                   dependencies: "${{ matrix.dependencies }}"
 
@@ -63,7 +63,7 @@ jobs:
               run: "vendor/bin/pest --parallel --coverage-clover=.build/phpunit/logs/clover.xml"
 
             - name: "Send code coverage report to codecov.io"
-              uses: "codecov/codecov-action@v5.0.7"
+              uses: "https://github.com/https://github.com/codecov/codecov-action@v5.0.7"
               with:
                   files: ".build/phpunit/logs/clover.xml"
                   token: "${{ secrets.CODECOV_TOKEN }}"
@@ -85,17 +85,17 @@ jobs:
 
         steps:
             - name: "Checkout"
-              uses: "actions/checkout@v4.2.2"
+              uses: "https://github.com/https://github.com/actions/checkout@v4.2.2"
 
             - name: "Lint YAML files"
-              uses: "ibiqlik/action-yamllint@v3.1.1"
+              uses: "https://github.com/https://github.com/ibiqlik/action-yamllint@v3.1.1"
               with:
                   config_file: ".yamllint.yaml"
                   file_or_dir: "."
                   strict: true
 
             - name: "Set up PHP"
-              uses: "shivammathur/setup-php@2.31.1"
+              uses: "https://github.com/https://github.com/shivammathur/setup-php@2.31.1"
               with:
                   coverage: "none"
                   extensions: "bcmath, ctype, curl, dom, exif, fileinfo, gd, iconv, imagick, intl, json, libxml, mbstring, none, opcache, pcntl, pdo, pdo_sqlite, phar, posix, simplexml, soap, sqlite, tokenizer, xml, xmlwriter, zip"
@@ -108,17 +108,17 @@ jobs:
               run: "composer validate --ansi --strict"
 
             - name: "Determine composer cache directory"
-              uses: "basecodeoy/.github/actions/composer/determine-cache-directory@1.0.0"
+              uses: "https://github.com/https://github.com/basecodeoy/.github/actions/composer/determine-cache-directory@1.0.0"
 
             - name: "Cache dependencies installed with composer"
-              uses: "actions/cache@v4.1.2"
+              uses: "https://github.com/https://github.com/actions/cache@v4.1.2"
               with:
                   path: "${{ env.COMPOSER_CACHE_DIR }}"
                   key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
                   restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
             - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-              uses: "basecodeoy/.github/actions/composer/install@1.0.0"
+              uses: "https://github.com/https://github.com/basecodeoy/.github/actions/composer/install@1.0.0"
               with:
                   dependencies: "${{ matrix.dependencies }}"
 
@@ -126,7 +126,7 @@ jobs:
               run: "composer normalize --ansi --dry-run"
 
             - name: "Cache cache directory for friendsofphp/php-cs-fixer"
-              uses: "actions/cache@v4.1.2"
+              uses: "https://github.com/https://github.com/actions/cache@v4.1.2"
               with:
                   path: ".build/php-cs-fixer"
                   key: "php-${{ matrix.php-version }}-php-cs-fixer-${{ github.ref_name }}"
@@ -154,10 +154,10 @@ jobs:
 
         steps:
             - name: "Checkout"
-              uses: "actions/checkout@v4.2.2"
+              uses: "https://github.com/https://github.com/actions/checkout@v4.2.2"
 
             - name: "Set up PHP"
-              uses: "shivammathur/setup-php@2.31.1"
+              uses: "https://github.com/https://github.com/shivammathur/setup-php@2.31.1"
               with:
                   coverage: "none"
                   extensions: "bcmath, ctype, curl, dom, exif, fileinfo, gd, iconv, imagick, intl, json, libxml, mbstring, none, opcache, pcntl, pdo, pdo_sqlite, phar, posix, simplexml, soap, sqlite, tokenizer, xml, xmlwriter, zip"
@@ -170,17 +170,17 @@ jobs:
               run: "composer validate --ansi --strict"
 
             - name: "Determine composer cache directory"
-              uses: "basecodeoy/.github/actions/composer/determine-cache-directory@1.0.0"
+              uses: "https://github.com/https://github.com/basecodeoy/.github/actions/composer/determine-cache-directory@1.0.0"
 
             - name: "Cache dependencies installed with composer"
-              uses: "actions/cache@v4.1.2"
+              uses: "https://github.com/https://github.com/actions/cache@v4.1.2"
               with:
                   path: "${{ env.COMPOSER_CACHE_DIR }}"
                   key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
                   restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
             - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-              uses: "basecodeoy/.github/actions/composer/install@1.0.0"
+              uses: "https://github.com/https://github.com/basecodeoy/.github/actions/composer/install@1.0.0"
               with:
                   dependencies: "${{ matrix.dependencies }}"
 
@@ -207,10 +207,10 @@ jobs:
 
         steps:
             - name: "Checkout"
-              uses: "actions/checkout@v4.2.2"
+              uses: "https://github.com/https://github.com/actions/checkout@v4.2.2"
 
             - name: "Set up PHP"
-              uses: "shivammathur/setup-php@2.31.1"
+              uses: "https://github.com/https://github.com/shivammathur/setup-php@2.31.1"
               with:
                   coverage: "pcov"
                   extensions: "bcmath, ctype, curl, dom, exif, fileinfo, gd, iconv, imagick, intl, json, libxml, mbstring, none, opcache, pcntl, pdo, pdo_sqlite, phar, posix, simplexml, soap, sqlite, tokenizer, xml, xmlwriter, zip"
@@ -223,20 +223,20 @@ jobs:
               run: "composer validate --ansi --strict"
 
             - name: "Determine composer root version"
-              uses: "basecodeoy/.github/actions/composer/determine-root-version@1.0.0"
+              uses: "https://github.com/https://github.com/basecodeoy/.github/actions/composer/determine-root-version@1.0.0"
 
             - name: "Determine composer cache directory"
-              uses: "basecodeoy/.github/actions/composer/determine-cache-directory@1.0.0"
+              uses: "https://github.com/https://github.com/basecodeoy/.github/actions/composer/determine-cache-directory@1.0.0"
 
             - name: "Cache dependencies installed with composer"
-              uses: "actions/cache@v4.1.2"
+              uses: "https://github.com/https://github.com/actions/cache@v4.1.2"
               with:
                   path: "${{ env.COMPOSER_CACHE_DIR }}"
                   key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
                   restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
             - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-              uses: "basecodeoy/.github/actions/composer/install@1.0.0"
+              uses: "https://github.com/https://github.com/basecodeoy/.github/actions/composer/install@1.0.0"
               with:
                   dependencies: "${{ matrix.dependencies }}"
 
@@ -260,10 +260,10 @@ jobs:
 
         steps:
             - name: "Checkout"
-              uses: "actions/checkout@v4.2.2"
+              uses: "https://github.com/https://github.com/actions/checkout@v4.2.2"
 
             - name: "Set up PHP"
-              uses: "shivammathur/setup-php@2.31.1"
+              uses: "https://github.com/https://github.com/shivammathur/setup-php@2.31.1"
               with:
                   coverage: "none"
                   extensions: "bcmath, ctype, curl, dom, exif, fileinfo, gd, iconv, imagick, intl, json, libxml, mbstring, none, opcache, pcntl, pdo, pdo_sqlite, phar, posix, simplexml, soap, sqlite, tokenizer, xml, xmlwriter, zip"
@@ -276,22 +276,22 @@ jobs:
               run: "composer validate --ansi --strict"
 
             - name: "Determine composer cache directory"
-              uses: "basecodeoy/.github/actions/composer/determine-cache-directory@1.0.0"
+              uses: "https://github.com/https://github.com/basecodeoy/.github/actions/composer/determine-cache-directory@1.0.0"
 
             - name: "Cache dependencies installed with composer"
-              uses: "actions/cache@v4.1.2"
+              uses: "https://github.com/https://github.com/actions/cache@v4.1.2"
               with:
                   path: "${{ env.COMPOSER_CACHE_DIR }}"
                   key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
                   restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
             - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-              uses: "basecodeoy/.github/actions/composer/install@1.0.0"
+              uses: "https://github.com/https://github.com/basecodeoy/.github/actions/composer/install@1.0.0"
               with:
                   dependencies: "${{ matrix.dependencies }}"
 
             - name: "Cache cache directory for rector/rector"
-              uses: "actions/cache@v4.1.2"
+              uses: "https://github.com/https://github.com/actions/cache@v4.1.2"
               with:
                   path: ".build/rector"
                   key: "php-${{ matrix.php-version }}-rector-${{ github.ref_name }}"
@@ -319,10 +319,10 @@ jobs:
 
         steps:
             - name: "Checkout"
-              uses: "actions/checkout@v4.2.2"
+              uses: "https://github.com/https://github.com/actions/checkout@v4.2.2"
 
             - name: "Set up PHP"
-              uses: "shivammathur/setup-php@2.31.1"
+              uses: "https://github.com/https://github.com/shivammathur/setup-php@2.31.1"
               with:
                   coverage: "none"
                   extensions: "bcmath, ctype, curl, dom, exif, fileinfo, gd, iconv, imagick, intl, json, libxml, mbstring, none, opcache, pcntl, pdo, pdo_sqlite, phar, posix, simplexml, soap, sqlite, tokenizer, xml, xmlwriter, zip"
@@ -335,17 +335,17 @@ jobs:
               run: "composer validate --ansi --strict"
 
             - name: "Determine composer cache directory"
-              uses: "basecodeoy/.github/actions/composer/determine-cache-directory@1.0.0"
+              uses: "https://github.com/https://github.com/basecodeoy/.github/actions/composer/determine-cache-directory@1.0.0"
 
             - name: "Cache dependencies installed with composer"
-              uses: "actions/cache@v4.1.2"
+              uses: "https://github.com/https://github.com/actions/cache@v4.1.2"
               with:
                   path: "${{ env.COMPOSER_CACHE_DIR }}"
                   key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
                   restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
             - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-              uses: "basecodeoy/.github/actions/composer/install@1.0.0"
+              uses: "https://github.com/https://github.com/basecodeoy/.github/actions/composer/install@1.0.0"
               with:
                   dependencies: "${{ matrix.dependencies }}"
 
@@ -369,10 +369,10 @@ jobs:
 
         steps:
             - name: "Checkout"
-              uses: "actions/checkout@v4.2.2"
+              uses: "https://github.com/https://github.com/actions/checkout@v4.2.2"
 
             - name: "Set up PHP"
-              uses: "shivammathur/setup-php@2.31.1"
+              uses: "https://github.com/https://github.com/shivammathur/setup-php@2.31.1"
               with:
                   coverage: "none"
                   extensions: "bcmath, ctype, curl, dom, exif, fileinfo, gd, iconv, imagick, intl, json, libxml, mbstring, none, opcache, pcntl, pdo, pdo_sqlite, phar, posix, simplexml, soap, sqlite, tokenizer, xml, xmlwriter, zip"
@@ -385,17 +385,17 @@ jobs:
               run: "composer validate --ansi --strict"
 
             - name: "Determine composer cache directory"
-              uses: "basecodeoy/.github/actions/composer/determine-cache-directory@1.0.0"
+              uses: "https://github.com/https://github.com/basecodeoy/.github/actions/composer/determine-cache-directory@1.0.0"
 
             - name: "Cache dependencies installed with composer"
-              uses: "actions/cache@v4.1.2"
+              uses: "https://github.com/https://github.com/actions/cache@v4.1.2"
               with:
                   path: "${{ env.COMPOSER_CACHE_DIR }}"
                   key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
                   restore-keys: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-"
 
             - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-              uses: "basecodeoy/.github/actions/composer/install@1.0.0"
+              uses: "https://github.com/https://github.com/basecodeoy/.github/actions/composer/install@1.0.0"
               with:
                   dependencies: "${{ matrix.dependencies }}"
 
@@ -422,10 +422,10 @@ jobs:
 
         steps:
             - name: "Checkout"
-              uses: "actions/checkout@v4.2.2"
+              uses: "https://github.com/https://github.com/actions/checkout@v4.2.2"
 
             - name: "Set up PHP"
-              uses: "shivammathur/setup-php@2.31.1"
+              uses: "https://github.com/https://github.com/shivammathur/setup-php@2.31.1"
               with:
                   coverage: "none"
                   extensions: "bcmath, ctype, curl, dom, exif, fileinfo, gd, iconv, imagick, intl, json, libxml, mbstring, none, opcache, pcntl, pdo, pdo_sqlite, phar, posix, simplexml, soap, sqlite, tokenizer, xml, xmlwriter, zip"
@@ -441,10 +441,10 @@ jobs:
               run: "composer validate --ansi --strict"
 
             - name: "Determine composer cache directory"
-              uses: "basecodeoy/.github/actions/composer/determine-cache-directory@1.0.0"
+              uses: "https://github.com/https://github.com/basecodeoy/.github/actions/composer/determine-cache-directory@1.0.0"
 
             - name: "Cache dependencies installed with composer"
-              uses: "actions/cache@v4.1.2"
+              uses: "https://github.com/https://github.com/actions/cache@v4.1.2"
               with:
                   path: "${{ env.COMPOSER_CACHE_DIR }}"
                   key: "php-${{ matrix.php-version }}-composer-${{ matrix.dependencies }}-${{ hashFiles('composer.lock') }}"
@@ -455,7 +455,7 @@ jobs:
               run: "composer config platform.php --ansi --unset"
 
             - name: "Install ${{ matrix.dependencies }} dependencies with composer"
-              uses: "basecodeoy/.github/actions/composer/install@1.0.0"
+              uses: "https://github.com/https://github.com/basecodeoy/.github/actions/composer/install@1.0.0"
               with:
                   dependencies: "${{ matrix.dependencies }}"
 
